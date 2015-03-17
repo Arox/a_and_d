@@ -1,0 +1,32 @@
+{% load task_extras %}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="http://localhost:8000/static/css/task_list.css"/>
+</head>
+<body>
+<div>
+    <form action="http://localhost:8000/task/new" method = "GET" >
+        <input value="create task" type="submit">
+
+        </input>
+    </form>
+</div>
+<div id = "select_container">
+    <select id = 'users'>
+        {% for user in list_users %}
+            <option value="{{ user.pk }}">{{ user.last_name }} {{ user.first_name }}</option>
+        {% endfor %}
+    </select>
+</div>
+<div id="content_container">
+    <table>
+    {%  for task, event in tasks_full %}
+         <tr>
+            <td class="user_name"> <a href="http://localhost:8000/task/detail/{{ task.pk }}">{{ event.m_user }}</a></td>
+            <td class="task_name"> <a href="http://localhost:8000/task/detail/{{ task.pk }}">{{ task.m_title }}</a></td>
+            <td class="task_event"> <a href="http://localhost:8000/task/detail/{{ task.pk }}">{{ list_types_event|index_data:event.m_type }}</a></td></tr></li>
+    {%  endfor %}
+    </table>
+</div>
+</body>
+</html>

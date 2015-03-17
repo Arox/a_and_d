@@ -1,0 +1,15 @@
+<html>
+<head>
+    <link rel="stylesheet" type = "text/css" href="static/css/auth.css" />
+</head>
+<body>
+<div id = 'maindiv'>
+    <div>
+        <form action="" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Send message" />
+        </form>
+        </div>
+</div>
+</body>
+</html>
