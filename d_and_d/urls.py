@@ -6,5 +6,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'd_and_d.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/', include(admin.site.urls)),
+    #url(r'^myadmin/', include(myadmin.site.urls)),
+    url(r'^admin/editor', include('myadmin.urls', namespace='admin/editor', app_name='myadmin')),
+    #url(r'^admin/editor', views.BaseParametrCreateView.as_view()),
 )

@@ -1,12 +1,11 @@
-#-*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.views.generic import FormView
-from forms import BaseParametersForm
-from models import BaseParameters
+from base.forms import BaseParametersForm
+from base.models import BaseParameters
 
 # Create your views here.
 class BaseParametrCreateView(FormView):
-    template_name = 'create_task.html'
+    template_name = 'administrator/create_base_parametr.html'
     success_url = ''
     form_class = BaseParametersForm
 

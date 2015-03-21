@@ -1,0 +1,19 @@
+<html>
+    <head>
+        {% block style %} {% endblock %}
+        {% block scripts %} {% endblock %}
+    </head>
+
+    <body>
+        <div class = 'menu' id = 'title_menu'>
+            <table>
+                <tr>
+                    <td><a href="#">1</a></td><td><a href="#">3</a></td><td><a href="#">2</a></td>
+                </tr>
+            </table>
+        </div>
+        <div id = content>
+            {% block content %} {% endblock %}
+        </div>
+    </body>
+</html>
